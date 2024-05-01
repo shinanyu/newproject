@@ -1,0 +1,41 @@
+# port
+server:
+  port: 80
+  
+#세션 소멸 시간 설정  
+  servlet:
+    session:
+      timeout: 90m
+        
+# My-SQL, JPA Setting
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/springtest?autoReconnect=true&useUnicode=true&characterEncoding=utf-8
+      username: spring
+      password: spring123
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate:
+      ddl: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  mustache:
+    servlet:
+      expose-request-attributes: true
+
+    suffix: .html
+
+
+# Hibernate SQL 로그 출력
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+    
+    
